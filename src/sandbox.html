@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sandbox</title>
+</head>
+<body>
+    <script>
+        function loadScript(src) {
+            let script = document.createElement('script');
+            script.src = src;
+            script.async = false;
+            document.body.append(script);
+        }
+
+        let args = JSON.parse(
+            decodeURIComponent(location.hash.slice(1))
+        )
+        function onScriptError(e, isFallBack) {
+            if(e){
+                e.preventDefault()
+            }
+            if(isFallBack){
+                window.parent.postMessage({
+                    fromSandBox:true,
+                    success:false,
+                    value:args.uid
+                })
+                return
+            }
+            window.successLoad = true
+            window.parent.postMessage({
+                fromSandBox:true,
+                success:true,
+                value:args.uid
+            })
+        }
+
+        addEventListener('error', onScriptError)
+        loadScript(args.link + "?_=" + args.uid);
+        loadScript('cb.js')
+    </script>
+</body>
+</html>

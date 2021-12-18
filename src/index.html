@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Black Hole</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Black Hole</h1>
+        <h2 class="code">$ curl https://example.com > /dev/null</h2>
+        <div class="lang"><span>En</span> / <span>中文</span></div>
+    </header>
+    <form id="app">
+        <h4 for="task-count-group" class="form-label">基本配置</h4>
+        <div class="row">
+            <div class="col-3 my-1">并发数目</div>
+            <div class="col-3 my-1">预定传输</div>
+            <div class="col-3 my-1">数据源</div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div :class="nTaskElementClass" id="task-count-group">
+                    <input type="text" class="form-control" placeholder="" :value="nTask" @change="changeNTask"
+                        aria-label="task-count-group">
+                    <button class="btn btn-outline-secondary" style="border-right: none;" @click="changeTaskAmount(+1)"
+                        type="button">+</button>
+                    <button class="btn btn-outline-secondary" @click="changeTaskAmount(-1)" type="button">-</button>
+                </div>
+                <div class="invalid-feedback">
+                    Input must be bigger than 0 and integr
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group col-3" id="traffic-count-group">
+                    <span class="input-group-text">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" v-model="infTraffic" type="checkbox" role="switch"
+                                id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">∞</label>
+                        </div>
+                    </span>
+                    <input type="text" class="form-control" placeholder="" style="flex: 0 0 100px;"
+                        v-model.number="trafficBudget" v-if="!infTraffic" :disabled="go" aria-label="task-count-group">
+                    <span class="input-group-text">GB</span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <button class="input-group-text dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        :disabled="go" aria-expanded="false">选择预定</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <div class="sources">
+                            <li class="dropdown-item" v-for="(source, ind) in sources" :key="source.text+ind"
+                                @click="chooseSource(ind)">
+                                {{source.text + ' ' + source.size + 'MB'}}
+                            </li>
+                        </div>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li style="text-align: right;padding-right: 1rem;">
+                            <!-- <button class="btn btn-outline-secondary" type="button">设置</button> -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo">自定义</button>
+                            <!-- <button type="button" class="btn btn-primary">删除</button> -->
+                        </li>
+                    </ul>
+                    <div type="text" class="form-control" placeholder="数据源" aria-label="" value="">{{ currentSource.text
+                        }}</div>
+                    <div type="text" style="flex: 0 0 20%;" class="form-control" placeholder="资源大小"
+                        :value="currentSource&&currentSource.size+'MB'" aria-label="">{{currentSource.size}}MB</div>
+                </div>
+            </div>
+        </div>
+        <h4 class="mt-4">统计信息</h4>
+        <div class="status">
+            <span class="lable">网速：</span><span class="value">{{speed}}</span>
+            <span class="lable">流量：</span><span class="value">{{amount}}</span>
+            <span class="lable">时长：</span><span class="value">{{duration}}</span>
+        </div>
+
+        <!-- control buttons -->
+        <div style="text-align: right;" class="mt-4">
+            <button type="button" class="btn btn-primary" :disabled="go" @click="fire">启动</button>
+            <button type="button" class="btn btn-danger" :disabled="!go" @click="term">停止</button>
+        </div>
+
+
+        <!-- waterfall -->
+        <div class="waterfall-wrapper" v-if="startTime !== null">
+            <div class="grid">
+                <div class="grid-line" v-for="x in 5" :key="'giridline' + x"></div>
+            </div>
+            <div class="ruler" v-if="historyAndCurrentTasks.length !== 0">
+                <div class="time">{{rulerTime.left}}ms</div>
+                <div style="border-top:1px gray solid;"></div>
+                <div>{{rulerTime.right}}ms</div>
+            </div>
+            <div v-for="task in historyAndCurrentTasks" :key="task.uid" :style="task.barStyle"
+            :class="task.className"
+                
+                role="progressbar" aria-valuenow="75"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <!-- hidden iframe -->
+        <div class="hidden">
+            <div v-for="task in taskList" :key="task.uid">
+                <iframe :src="'./sandbox.html#' + loactionHash(task)"></iframe>
+            </div>
+        </div>
+
+
+        <!-- Scrollable modal -->
+        <!-- Modal -->
+
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">新增数据源</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">描述</label>
+                                <input type="text" class="form-control" id="recipient-name"
+                                    v-model="holdSourceText" placeholder="location, provider etc.">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">链接</label>
+                                <input type="text" class="form-control" 
+                                v-model="holdSourceLink" id="recipient-name" placeholder="http(s)://...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">体积</label>
+                                <input type="text" class="form-control" 
+                                v-model="holdSourceSize" id="recipient-name" placeholder="MB">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" @click="setCustomSource" data-bs-dismiss="modal" class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

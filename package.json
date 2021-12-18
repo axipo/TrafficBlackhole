@@ -1,0 +1,19 @@
+{
+  "name": "traffic_blackhole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server -p 7070",
+    "watch": "less-watch-compiler ./src ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.0.0",
+    "less": "^4.1.2",
+    "less-watch-compiler": "^1.16.3",
+    "lessc": "^1.0.2"
+  }
+}

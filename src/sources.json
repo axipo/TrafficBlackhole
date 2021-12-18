@@ -1,0 +1,327 @@
+[
+    {
+        "text": "OVH VIN",
+        "size": 1,
+        "link": "https://vin.proof.ovh.us/files/1Mb.dat"
+    },
+    {
+        "text": "OVH SBG",
+        "size": 1,
+        "link": "https://sbg.proof.ovh.net/files/1Mb.dat"
+    },
+    {
+        "text": "OVH RBX",
+        "size": 1,
+        "link": "https://rbx.proof.ovh.net/files/1Mb.dat"
+    },
+    {
+        "text": "OVH HIL",
+        "size": 1,
+        "link": "https://hil.proof.ovh.us/files/1Mb.dat"
+    },
+    {
+        "text": "OVH GRA",
+        "size": 1,
+        "link": "https://gra.proof.ovh.net/files/1Mb.dat"
+    },
+    {
+        "text": "OVH BHS",
+        "size": 1,
+        "link": "https://bhs.proof.ovh.ca/files/1Mb.dat"
+    },
+    {
+        "text": "OVH VIN",
+        "size": 10,
+        "link": "https://vin.proof.ovh.us/files/10Mb.dat"
+    },
+    {
+        "text": "OVH SBG",
+        "size": 10,
+        "link": "https://sbg.proof.ovh.net/files/10Mb.dat"
+    },
+    {
+        "text": "OVH RBX",
+        "size": 10,
+        "link": "https://rbx.proof.ovh.net/files/10Mb.dat"
+    },
+    {
+        "text": "OVH HIL",
+        "size": 10,
+        "link": "https://hil.proof.ovh.us/files/10Mb.dat"
+    },
+    {
+        "text": "OVH GRA",
+        "size": 10,
+        "link": "https://gra.proof.ovh.net/files/10Mb.dat"
+    },
+    {
+        "text": "OVH BHS",
+        "size": 10,
+        "link": "https://bhs.proof.ovh.ca/files/10Mb.dat"
+    },
+    {
+        "text": "DigitalOcean NYC1",
+        "size": 10,
+        "link": "http://speedtest-nyc1.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean NYC2",
+        "size": 10,
+        "link": "http://speedtest-nyc2.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean NYC3",
+        "size": 10,
+        "link": "http://speedtest-nyc3.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean AMS2",
+        "size": 10,
+        "link": "http://speedtest-ams2.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean AMS3",
+        "size": 10,
+        "link": "http://speedtest-ams3.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean SFO1",
+        "size": 10,
+        "link": "http://speedtest-sfo1.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean SFO2",
+        "size": 10,
+        "link": "http://speedtest-sfo2.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean SFO3",
+        "size": 10,
+        "link": "http://speedtest-sfo3.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean SGP1",
+        "size": 10,
+        "link": "http://speedtest-sgp1.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean LON1",
+        "size": 10,
+        "link": "http://speedtest-lon1.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean FRA1",
+        "size": 10,
+        "link": "http://speedtest-fra1.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean TOR1",
+        "size": 10,
+        "link": "http://speedtest-tor1.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "DigitalOcean BLR1",
+        "size": 10,
+        "link": "http://speedtest-blr1.digitalocean.com/10mb.test"
+    },
+    {
+        "text": "EDIS United Arab Emirates",
+        "size": 10,
+        "link": "https://ae.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Graz, Austria",
+        "size": 10,
+        "link": "https://atgrz.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Vienna, Austria",
+        "size": 10,
+        "link": "https://at.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Sydney, Australia",
+        "size": 10,
+        "link": "https://au.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Oostkamp , Belgium",
+        "size": 10,
+        "link": "https://be.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Sofia, Bulgaria",
+        "size": 10,
+        "link": "https://bg.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Montréal, Canada",
+        "size": 10,
+        "link": "https://ca.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Zurich, Switzerland",
+        "size": 10,
+        "link": "https://ch.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Viña del Mar Chile",
+        "size": 10,
+        "link": "https://cl.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Prague, Czech Republic",
+        "size": 10,
+        "link": "https://cz.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Frankfurt, Germany",
+        "size": 10,
+        "link": "https://de.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Copenhagen, Denmark",
+        "size": 10,
+        "link": "https://dk.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Seville, Spain",
+        "size": 10,
+        "link": "https://es.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Paris, France",
+        "size": 10,
+        "link": "https://fr.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Thessaloniki, Greece",
+        "size": 10,
+        "link": "https://gr.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Douglas, Isle of Man",
+        "size": 10,
+        "link": "https://im.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Kwai Chung, Hong Kong",
+        "size": 10,
+        "link": "https://hk.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Zagreb, Croatia",
+        "size": 10,
+        "link": "https://hr.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Budapest, Hungary",
+        "size": 10,
+        "link": "https://hu.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Tel Aviv, Israel",
+        "size": 10,
+        "link": "https://il.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Hafnarfjordur, Iceland",
+        "size": 10,
+        "link": "https://is.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Milan, Italy",
+        "size": 10,
+        "link": "https://it.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Sicily Italia",
+        "size": 10,
+        "link": "https://itpa.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Tokyo, Japan",
+        "size": 10,
+        "link": "https://jp.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Vilnius, Lithuania",
+        "size": 10,
+        "link": "https://lt.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Riga, Latvia",
+        "size": 10,
+        "link": "https://lv.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Chisinau, Moldova",
+        "size": 10,
+        "link": "https://md.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Skopje, North Macedonia",
+        "size": 10,
+        "link": "https://mk.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Amsterdam, Netherlands",
+        "size": 10,
+        "link": "https://nl.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Oslo, Norway",
+        "size": 10,
+        "link": "https://no.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Warsaw, Poland",
+        "size": 10,
+        "link": "https://pl.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Belgrade, Serbia",
+        "size": 10,
+        "link": "https://rs.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Bucharest, Romania",
+        "size": 10,
+        "link": "https://ro.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Moscow, Russian",
+        "size": 10,
+        "link": "https://ru.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS St. Petersburg, Russian",
+        "size": 10,
+        "link": "https://rusp.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Stockholm, Sweden",
+        "size": 10,
+        "link": "https://se.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Singapore, Singapore",
+        "size": 10,
+        "link": "https://sg.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS Ljubljana, Slovenia",
+        "size": 10,
+        "link": "https://si.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS London, United Kingdom",
+        "size": 10,
+        "link": "https://uk.edis.at/10MB.test"
+    },
+    {
+        "text": "EDIS New York, USA",
+        "size": 10,
+        "link": "https://us.edis.at/10MB.test"
+    }
+]

@@ -1,0 +1,129 @@
+header {
+  background-color: #164fa5;
+  color: white;
+  padding: 3rem 4rem;
+  padding-bottom: 7rem;
+  position: relative;
+}
+header .code {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-family: 'consola', 'Courier New', Courier, monospace;
+}
+header .lang {
+  position: absolute;
+  right: 2rem;
+  top: 1.2rem;
+}
+header .lang span:hover {
+  cursor: pointer;
+  color: #ddd;
+}
+#app {
+  width: 70%;
+  min-width: 1140px;
+  min-height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.4rem 1.8rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  margin-top: -5rem;
+  background-color: white;
+  position: relative;
+}
+#app .thread-block {
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: #0066ff;
+  display: inline-block;
+  vertical-align: middle;
+}
+#app #task-count-group .btn,
+#app #traffic-count-group .btn {
+  min-width: 3rem;
+}
+#app #task-count-group .btn:focus,
+#app #traffic-count-group .btn:focus {
+  box-shadow: none;
+}
+#app #task-count-group .btn:active,
+#app #traffic-count-group .btn:active {
+  background-color: #292d30;
+}
+#app .btn:focus {
+  box-shadow: none;
+}
+#app .btn.btn-primary:active {
+  background-color: #0a254d;
+}
+#app .btn.btn-danger:active {
+  background-color: #5e0f17;
+}
+#app .status {
+  margin: 0.5rem 0;
+}
+#app .status .value {
+  margin-right: 2rem;
+  color: #757b80;
+  font-family: 'consola', 'Courier New', Courier, monospace;
+}
+#app .hidden {
+  pointer-events: none;
+  position: fixed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: -150vw;
+  top: -150vh;
+}
+#app .waterfall-wrapper {
+  position: relative;
+  width: 85%;
+  margin: 1rem auto;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+#app .waterfall-wrapper .grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  pointer-events: none;
+}
+#app .waterfall-wrapper .grid .grid-line {
+  height: 100%;
+  flex: 1;
+}
+#app .waterfall-wrapper .grid .grid-line:nth-last-child(n+2) {
+  border-right: 1px dashed rgba(94, 94, 94, 0.1);
+}
+#app .pbar {
+  height: 10px;
+  background-color: gray;
+  box-sizing: borderbox;
+  border: 1px solid #333;
+}
+#app .pbar:hover {
+  filter: brightness(70%);
+}
+#app .ruler {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .ruler .time {
+  font-family: 'consola', 'Courier New', Courier, monospace;
+}
+#app .sources {
+  cursor: default;
+  max-height: 15rem;
+  overflow-y: scroll;
+}
+#app .sources li {
+  border-bottom: 1px solid #eee;
+}
