@@ -127,3 +127,6 @@ header .lang span:hover {
 #app .sources li {
   border-bottom: 1px solid #eee;
 }
+.github-fork-ribbon:before {
+  background-color: #090;
+}
