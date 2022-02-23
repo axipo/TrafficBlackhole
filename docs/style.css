@@ -1,3 +1,6 @@
+#main-container {
+  min-height: 100vh;
+}
 header {
   background-color: #164fa5;
   color: white;
@@ -129,4 +132,14 @@ header .lang span:hover {
 }
 .github-fork-ribbon:before {
   background-color: #090;
+}
+#helper-container {
+  padding: 2rem 15%;
+  background-color: #0066ff;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+#helper-container p {
+  line-height: 1.5;
+  font-size: 1.1rem;
 }
