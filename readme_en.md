@@ -8,8 +8,8 @@ In order to measure proxy service and network quality conveniently, I developed 
 
 ## Notice
 
-1. It **won't** consume your traffic during the test.
+### 1. It **won't** consume your traffic during the test.
 The interesting design is that this project use some public looking glass service as data source, so it won't consume host provider's traffic during the test. If you want to self-host it, this is very significative.
 
-2. Don't forget turn on your proxy service
+### 2. Don't forget turn on your proxy service
 If you want to measure proxy service, add the website to your proxy list or using global proxy mode.
