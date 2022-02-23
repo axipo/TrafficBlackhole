@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "http-server -p 7070",
-    "watch": "less-watch-compiler ./src ./src"
+    "watch": "less-watch-compiler ./docs ./docs"
   },
   "keywords": [],
   "author": "",
