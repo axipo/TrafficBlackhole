@@ -143,3 +143,9 @@ header .lang span:hover {
   line-height: 1.5;
   font-size: 1.1rem;
 }
+#helper-container h2 {
+  font-size: 1.5rem;
+}
+#helper-container h3 {
+  font-size: 1.3rem;
+}
