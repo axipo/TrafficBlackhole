@@ -10,20 +10,21 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="vue-i18n.js"></script>
 </head>
 
 <body>
     <header>
         <h1>Black Hole</h1>
         <h2 class="code">$ curl https://example.com > /dev/null</h2>
-        <div class="lang"><span>En</span> / <span>中文</span></div>
+        <div class="lang"><span data-lang="en">En</span> / <span data-lang="cn">中文</span></div>
     </header>
     <form id="app">
-        <h4 for="task-count-group" class="form-label">基本配置</h4>
+        <h4 for="task-count-group" class="form-label">{{ $t('message.s2') }}</h4>
         <div class="row">
-            <div class="col-3 my-1">并发数目</div>
-            <div class="col-3 my-1">预定传输</div>
-            <div class="col-3 my-1">数据源</div>
+            <div class="col-3 my-1">{{ $t('message.s3') }}</div>
+            <div class="col-3 my-1">{{ $t('message.s4') }}</div>
+            <div class="col-3 my-1">{{ $t('message.s5') }}</div>
         </div>
         <div class="row">
             <div class="col-3">
@@ -55,7 +56,7 @@
             <div class="col-6">
                 <div class="input-group">
                     <button class="input-group-text dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        :disabled="go" aria-expanded="false">选择预定</button>
+                        :disabled="go" aria-expanded="false">{{ $t('message.s6') }}</button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <div class="sources">
                             <li class="dropdown-item" v-for="(source, ind) in sources" :key="source.text+ind"
@@ -69,7 +70,7 @@
                         <li style="text-align: right;padding-right: 1rem;">
                             <!-- <button class="btn btn-outline-secondary" type="button">设置</button> -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo">自定义</button>
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo">{{ $t('message.s7') }}</button>
                             <!-- <button type="button" class="btn btn-primary">删除</button> -->
                         </li>
                     </ul>
@@ -80,17 +81,17 @@
                 </div>
             </div>
         </div>
-        <h4 class="mt-4">统计信息</h4>
+        <h4 class="mt-4">{{ $t('message.s8') }}</h4>
         <div class="status">
-            <span class="lable">网速：</span><span class="value">{{speed}}</span>
-            <span class="lable">流量：</span><span class="value">{{amount}}</span>
-            <span class="lable">时长：</span><span class="value">{{duration}}</span>
+            <span class="lable">{{ $t('message.s17') }}</span><span class="value">{{speed}}</span>
+            <span class="lable">{{ $t('message.s18') }}</span><span class="value">{{amount}}</span>
+            <span class="lable">{{ $t('message.s19') }}</span><span class="value">{{duration}}</span>
         </div>
 
         <!-- control buttons -->
         <div style="text-align: right;" class="mt-4">
-            <button type="button" class="btn btn-primary" :disabled="go" @click="fire">启动</button>
-            <button type="button" class="btn btn-danger" :disabled="!go" @click="term">停止</button>
+            <button type="button" class="btn btn-primary" :disabled="go" @click="fire">{{ $t('message.s9') }}</button>
+            <button type="button" class="btn btn-danger" :disabled="!go" @click="term">{{ $t('message.s10') }}</button>
         </div>
 
 
@@ -127,31 +128,31 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">新增数据源</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">{{ $t('message.s11') }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">描述</label>
+                                <label for="recipient-name" class="col-form-label">{{ $t('message.s12') }}</label>
                                 <input type="text" class="form-control" id="recipient-name"
                                     v-model="holdSourceText" placeholder="location, provider etc.">
                             </div>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">链接</label>
+                                <label for="recipient-name" class="col-form-label">{{ $t('message.s13') }}</label>
                                 <input type="text" class="form-control" 
                                 v-model="holdSourceLink" id="recipient-name" placeholder="http(s)://...">
                             </div>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">体积</label>
+                                <label for="recipient-name" class="col-form-label">{{ $t('message.s14') }}</label>
                                 <input type="text" class="form-control" 
                                 v-model="holdSourceSize" id="recipient-name" placeholder="MB">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" @click="setCustomSource" data-bs-dismiss="modal" class="btn btn-primary">Confirm</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ $t('message.s15') }}</button>
+                        <button type="button" @click="setCustomSource" data-bs-dismiss="modal" class="btn btn-primary">{{ $t('message.s16') }}</button>
                     </div>
                 </div>
             </div>
@@ -164,6 +165,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="messages.js"></script>
     <script src="main.js"></script>
 </body>
 
