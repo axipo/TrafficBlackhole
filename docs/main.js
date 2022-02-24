@@ -283,6 +283,9 @@ let app = {
                 this.sources = v
                 this.currentSourceIndex = 0
             })
+    },
+    mounted(){
+        this.$el.style.visibility = 'visible';
     }
 };
 new Vue(app).$mount('#app')
