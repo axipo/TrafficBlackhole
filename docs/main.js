@@ -192,7 +192,7 @@ let app = {
             this.adjust()
         },
         changeNTask(e){
-            let value = e.target.value
+            let value = parseInt(e.target.value)
             if(value <= 0){
                 return
             }
