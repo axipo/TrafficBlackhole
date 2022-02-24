@@ -4,7 +4,7 @@
 
 In order to measure proxy service and network quality conveniently, I developed this simple project. The only function of this toy is to consume network traffic continuously, and record the statistics infomation such as speed and traffic amount.  If you are using a proxy software (like vpn, sock5/http proxy), you'll know the quality of your network.
 
-<img src="./docs/screenshot_en.png">
+<img src="./docs/screenshot_en.gif">
 
 ## Notice
 
