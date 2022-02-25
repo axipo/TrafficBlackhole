@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traffic Black Hole</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"
+        integrity="sha512-XdUZ5nrNkVySQBnnM5vzDqHai823Spoq1W3pJoQwomQja+o4Nw0Ew1ppxo5bhF2vMug6sfibhKWcNJsG8Vj9tg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="vue-i18n.js"></script>
 </head>
 
@@ -21,7 +24,7 @@
             <h1>Black Hole</h1>
             <h2 class="code">$ curl https://example.com > /dev/null</h2>
             <div class="lang"><span data-lang="en">En</span> / <span data-lang="cn">中文</span>
-                / <a href="#helper-container" style="color: white;">?</a></div>
+                / <a href="#about" style="color: white;">?</a></div>
         </header>
         <form id="app" style="visibility: hidden;">
             <h4 for="task-count-group" class="form-label">{{ $t('message.s2') }}</h4>
@@ -170,10 +173,11 @@
         </form>
     </section>
 
-    <section id="helper-container">
+    <section id="about">
         <h2>关于</h2>
         <p>
-            为了方便测量代理服务和网络质量，我开发了这个简单的项目。这个小玩具唯一的作用就是不断消耗网络流量，记录速度、流量等统计信息。 如果使用代理软件（如 vpn、sock5/http 代理）访问改网站，就可以知道代理网络的质量如何。
+            为了方便测量代理服务和网络质量，我开发了这个简单的项目。这个小玩具唯一的作用就是不断消耗网络流量，记录速度、流量等统计信息。 如果使用代理软件（如 vpn、sock5/http
+            代理）访问该网站，就可以知道代理网络的质量如何。
         </p>
         <h2>注意</h2>
         <h3>1. 测试过程中<b>不会</b>消耗网站所在服务器的流量</h3>
@@ -210,9 +214,9 @@
     <a class="github-fork-ribbon right-bottom fixed" href="https://github.com/axipo/TrafficBlackhole"
         data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-pax4MlgXjHEPfCwcJLQhigY7+N8rt6bVvWLFyUMuxShv170X53TRzGPmPkZmGBhk+jikR8WBM4yl7A9WMHHqvg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="messages.js"></script>
     <script src="main.js"></script>
 </body>

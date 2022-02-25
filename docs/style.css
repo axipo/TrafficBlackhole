@@ -133,19 +133,19 @@ header .lang span:hover {
 .github-fork-ribbon:before {
   background-color: #090;
 }
-#helper-container {
+#about {
   padding: 2rem 15%;
   background-color: #0066ff;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
-#helper-container p {
+#about p {
   line-height: 1.5;
   font-size: 1.1rem;
 }
-#helper-container h2 {
+#about h2 {
   font-size: 1.5rem;
 }
-#helper-container h3 {
+#about h3 {
   font-size: 1.3rem;
 }
