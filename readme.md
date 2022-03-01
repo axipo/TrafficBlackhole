@@ -1,17 +1,15 @@
 # TrafficBlackhole
 
-中文 | [English](./readme_en.md)
+[中文](./readme_cn.md) | English
 
-为了方便测量代理服务和网络质量，我开发了这个简单的项目。这个小玩具唯一的作用就是不断消耗网络流量，记录速度、流量等统计信息。 如果使用代理软件（如 vpn、sock5/http 代理）访问该网站，就可以知道代理网络的质量如何。
+In order to measure proxy service and network quality conveniently, I developed this simple project. The only function of this toy is to consume network traffic continuously, and record the statistics infomation such as speed and traffic amount.  If you are using a proxy software (like vpn, sock5/http proxy), you'll know the quality of your network.
 
-<img src="./docs/screenshot.gif">
+<img src="./docs/screenshot_en.gif">
 
-## 注意
+## Notice
 
-### 1. 测试过程中**不会**消耗网站所在服务器的流量
+### It **won't** cost host provider's traffic during the test.
+The interesting design is that this project uses some public looking glass service as data source, so it won't consume host provider's traffic during the test. If you want to self-host it, this is very significative.
 
-这个项目使用了一些公共 looking glass 服务作为数据源，所以在测试过程中它不会消耗主机提供商的流量。 如果你想自己托管它，这一有趣的设计就非常有意义。
-
-### 2. 测试过程中不要忘记开代理
-
-测试过程中不要忘记开代理，否则花费的仅是你本地网络的流量而不会消耗代理服务器的流量。
+### Don't forget turn on your proxy service
+If you want to measure proxy service, add the website to your proxy list or using global proxy mode.

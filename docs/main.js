@@ -5,8 +5,11 @@ function simpleUid() {
         Date.now()
     )
 }
+
+const initLang = 'en'
+
 const i18n = new VueI18n({
-  locale: 'cn', // 设置地区
+  locale: initLang, // 设置地区
   messages, // 设置地区信息
 })
 
@@ -292,10 +295,13 @@ new Vue(app).$mount('#app')
 
 function setLang(e){
     let lang = e.target.dataset.lang
+    document.querySelector('#about').dataset.lang = lang;
     if(lang === 'en'){
         i18n.locale = 'en'
     }else if(lang === 'cn'){
         i18n.locale = 'cn'
     }
 }
+
 document.querySelector('.lang').addEventListener('click', setLang)
+document.querySelector('#about').dataset.lang = initLang;

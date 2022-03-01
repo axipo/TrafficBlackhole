@@ -149,3 +149,9 @@ header .lang span:hover {
 #about h3 {
   font-size: 1.3rem;
 }
+[data-lang="cn"] #en-about {
+  display: none;
+}
+[data-lang="en"] #cn-about {
+  display: none;
+}

@@ -24,7 +24,7 @@
             <h1>Black Hole</h1>
             <h2 class="code">$ curl https://example.com > /dev/null</h2>
             <div class="lang"><span data-lang="en">En</span> / <span data-lang="cn">中文</span>
-                / <a href="#about" style="color: white;">?</a></div>
+                / <a href="#about" style="color: white;text-decoration: none;">?</a></div>
         </header>
         <form id="app" style="visibility: hidden;">
             <h4 for="task-count-group" class="form-label">{{ $t('message.s2') }}</h4>
@@ -173,7 +173,8 @@
         </form>
     </section>
 
-    <section id="about">
+    <section id="about" data-lang="en">
+        <div id="cn-about">
         <h2>关于</h2>
         <p>
             为了方便测量代理服务和网络质量，我开发了这个简单的项目。这个小玩具唯一的作用就是不断消耗网络流量，记录速度、流量等统计信息。 如果使用代理软件（如 vpn、sock5/http
@@ -188,8 +189,10 @@
         <p>
             测试过程中不要忘记开代理，否则花费的仅是你本地网络的流量而不会消耗代理服务器的流量。
         </p>
+        </div>
 
 
+        <div id="en-about">
         <h2 style="margin-top: 6rem;">About</h2>
         <p>
             In order to measure proxy service and network quality conveniently, I developed this simple project. The
@@ -208,6 +211,7 @@
         <p>
             If you want to measure proxy service, add the website to your proxy list or using global proxy mode.
         </p>
+        </div>
     </section>
 
 
